@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+
+{% block title %}Social dashboard{% endblock %}
+
+{% block content %}
+<div class="fluid-wrap">
+	<div class="fluid-row">
+		<div class="col-12">
+			<h1 class="article-heading">Guardian/Topsy social dashboard</h1>
+
+			<blockquote>What the world is sharing about the Guardian</blockquote>
+		</div>
+	</div>
+
+	<div class="fluid-row margin-top">
+		<div class="col-6">
+			<h2 class="sub-heading">What is this?</h2>
+			<p>An app that uses the Topsy API to look at social sharing.</p>
+		</div>
+		<div class="col-6">
+			<h2 class="sub-heading">Linken</h2>
+
+			<ol>
+				<li><a href="/dashboard/uk">www.guardian.co.uk</a></li>
+				<li><a href="/dashboard/us">www.guardiannews.com</a></li>
+			</ol>
+
+
+		</div>
+	</div>
+</div>
+
+{% endblock %}

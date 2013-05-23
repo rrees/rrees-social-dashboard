@@ -1,0 +1,50 @@
+{% extends 'base.html' %}
+
+{% block title %}Social dashboard{% endblock %}
+
+{% block content %}
+<div class="fluid-wrap">
+	<div class="fluid-row">
+		<div class="col-12">
+			<h1 class="article-heading">Guardian {{country_code}} social dashboard</h1>
+
+			<blockquote>What the world is sharing about the Guardian</blockquote>
+		</div>
+	</div>
+
+	<div class="fluid-row margin-top">
+		<div class="col-12">
+				<ol class="results">
+				{% for result in results %}
+					<li>
+						<h2 class="headline"><span class="counter">{{loop.index}}</span><span class="title">{{result.title}}</span></h2>
+						<p class="content"><a href="{{result.url}}">{{result.content}}</a></p>
+						<div class="author">
+							<img src="{{result.topsy_author_img}}">
+							<p><a href="{{result.trackback_author_url}}">{{result.trackback_author_name}}</a> {{result.trackback_author_nick}}</p>
+						</div>
+						<table class="stats">
+							<thead>
+								<tr>
+									<th>Score</th>
+									<th>Hits</th>
+									<th>Trackback total</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+								 	<td>{{result.score}}</td>
+								 	<td>{{result.hits}}</td>
+								 	<td>{{result.trackback_total}}</td>
+								 </tr>
+							</tbody>
+						</table>	
+					</li>
+				{% endfor %}
+				</ol>
+			</table>
+		</div>
+	</div>
+</div>
+
+{% endblock %}
